@@ -1,0 +1,53 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0b0f17;
+  color: #f8fafc;
+  font-family: system-ui, sans-serif;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header panel"
+    "canvas panel";
+}
+
+header {
+  grid-area: header;
+  padding: 12px 20px;
+  border-bottom: 1px solid #1e293b;
+}
+
+header h1 { font-size: 16px; color: #38bdf8; }
+#status   { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+
+canvas {
+  grid-area: canvas;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #070b12;
+  cursor: grab;
+}
+canvas:active { cursor: grabbing; }
+
+.panel {
+  grid-area: panel;
+  background: #0f172a;
+  border-left: 1px solid #1e293b;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panel label { font-size: 11px; color: #94a3b8; text-transform: uppercase; }
+.panel input {
+  background: #070b12;
+  border: 1px solid #1e293b;
+  color: #f8fafc;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-family: monospace;
+}
